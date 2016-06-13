@@ -165,13 +165,13 @@
 
 ### Qualitative Predictors
 
-print("")
-print("---------------------------------------------------------------------")
-print("")
-print("---------------- Playing with Qualitative Predictors ----------------")
-print("")
-print("---------------------------------------------------------------------")
-print("")
+	print("")
+	print("---------------------------------------------------------------------")
+	print("")
+	print("---------------- Playing with Qualitative Predictors ----------------")
+	print("")
+	print("---------------------------------------------------------------------")
+	print("")
 
 	# Carseats is another one of our datasets
 	fix(Carseats)	# throws up a dataframe on the screen
