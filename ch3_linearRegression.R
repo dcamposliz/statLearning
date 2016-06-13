@@ -107,7 +107,6 @@
 
 	print("Now every variable left in model fit4 is significant for estimating median value of unnocupied homes.")
 
-
 ### Nonlinear terms and Interactions
 
 	print("")
@@ -161,9 +160,8 @@
 	points(lstat, fitted(fit7), col="blue", pch = 20)
 	print("Our fit7 model seems to overfit the data, too wiggly; maybe following some rather isolated points toward the right tail.")
 
-	#
+	# this gives us a 'listing' of 20 plotting characters with size 2
 	plot(1:20, 1:20, pch=1:20, cex=2)
-
 
 ### Qualitative Predictors
 
@@ -175,12 +173,21 @@ print("")
 print("---------------------------------------------------------------------")
 print("")
 
-	fix(Carseats)
-	names(Carseats)
-	summary(Carseats)
-	fit1_b = lm(Sales ~ . + Income:Advertising+Age:Price, Carseats)
-	summary(fit1_b)
-	contrasts(Carseats$ShelveLoc)
+	# Carseats is another one of our datasets
+	fix(Carseats)	# throws up a dataframe on the screen
+	names(Carseats)		# throws up the names of the variables in Carseats
+	summary(Carseats)	# summary of each variable in Carseats
+
+	fit1_b = lm(Sales ~ . + Income:Advertising+Age:Price, Carseats) # fitting model
+	# note that we are adding everything to the prediction model,
+	# including an interaction between Income and Advertising,
+	# as well as another interaction between Age and Price
+
+	summary(fit1_b)	# Income:Advertising are significant, but Price:Age are not
+	
+	contrasts(Carseats$ShelveLoc)	# shows how a qualitative variable will code when in linear model
+	# since ShelveLoc has three levels
+	# then this has two dummy variables
 
 ### Writing R Functions
 
